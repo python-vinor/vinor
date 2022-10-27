@@ -1,12 +1,17 @@
 [tool.poetry]
 name = "vinor"
-version = "0.1.2a0"
+version = "1.0.0"
 description = ""
 authors = ["VinorTeam <opensource@vinor.io>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pytest = "^7.2.0"
+pytest-schema = "^0.1.1"
+requests = "^2.28.1"
+flake8 = "^5.0.4"
+faker = "^15.1.1"
 
 
 [build-system]
