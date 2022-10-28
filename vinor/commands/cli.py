@@ -69,9 +69,5 @@ def main():
     cli()
 
 
-"""
-To see the commands run this:
-    vinor --help 
-"""
 if __name__ == '__main__':
     main()

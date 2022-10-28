@@ -1,6 +1,5 @@
 import json
 import os
-
 from vinor.commands.initializer import Initializer
 from vinor.tests.base_test_case import BaseTestCase
 
