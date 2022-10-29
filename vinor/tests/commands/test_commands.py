@@ -42,9 +42,14 @@ class TestCommonCommands(BaseTestCase):
         assert json.loads(result.stdout) == initializer.read_config()
 
     def test_command_new_project(self):
-        project_name = 'myacademy'
-        # Run command: vinor new myacademy
-        cmd = ['vinor', 'new', 'myacademy']
+        """
+        Create project at current_dir/examples
+        """
+        project_name = 'academia'
+        project_path = f'{os.getcwd()}/examples'
+
+        # Run command: vinor new academia
+        cmd = ['vinor', 'new', project_name, '--path', project_path]
         result = self.call_command(cmd)
         assert result.returncode == 0
         assert result.stdout == f'Create project {project_name} successfully.\n'

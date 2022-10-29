@@ -1,6 +1,8 @@
 import json
 import os
 import click
+
+from vinor.generator.generator import Generator
 from .utils import (
     camel_to_snake
 )
@@ -63,7 +65,12 @@ def config(show: bool):
 # Generator
 @cli.command('new', short_help='Creates a new Vinor project at <path>.')
 @click.argument('project_name')
-def new(project_name: str):
+@click.option('--path')
+def new(project_name: str, path: str = None):
+    if path is None:
+        path = os.getcwd()
+    generator = Generator(project_name=project_name, path=path)
+    generator.run()
     click.echo(f'Create project {project_name} successfully.')
 
 
@@ -71,6 +78,7 @@ cli.add_command(init)
 cli.add_command(init_db)
 cli.add_command(drop_db)
 cli.add_command(new)
+
 
 def main():
     cli()
