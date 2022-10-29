@@ -60,10 +60,17 @@ def config(show: bool):
             click.echo('Not found config file vinor.config.json')
 
 
+# Generator
+@cli.command('new', short_help='Creates a new Vinor project at <path>.')
+@click.argument('project_name')
+def new(project_name: str):
+    click.echo(f'Create project {project_name} successfully.')
+
+
 cli.add_command(init)
 cli.add_command(init_db)
 cli.add_command(drop_db)
-
+cli.add_command(new)
 
 def main():
     cli()
